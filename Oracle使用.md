@@ -1,5 +1,22 @@
-# ASP.NET-Tips
+# Oracle使用
 
-记录一些ASP.NET的小知识点
+工作中使用Oracle的一些记录
 
+## 通用的分页
+
+通用的分页的构造语句
+
+```
+        // <summary>
+        /// Oracle通用分页
+        /// </summary>
+        /// <param name="strSql">符合条件的所有记录集查询SQL字符串</param>
+        /// <param name="pageSize">每页显示数量</param>
+        /// <param name="pageNum">当前页</param>
+        public static string GetOraclePagerString(string strSql, int pageSize, int pageNum)
+        {
+            string strRet = "select * from (select A.*, rownum rn from (select * from (" + strSql + " )) A where rownum <= " + pageSize * pageNum + ") where rn > " + pageSize * (pageNum - 1);
+            return strRet;
+        }
+```
 
