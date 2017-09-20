@@ -2,6 +2,10 @@
 
 工作中使用Oracle的一些记录
 
+## 本地网络服务名配置
+
+使用`oracle configuration assistant`来进行本地网络服务名配置，参考[oracle本地网络服务名配置](http://jingyan.baidu.com/article/73c3ce2818b5e7e50343d925.html)
+
 ## 通用的分页
 
 通用的分页的构造语句
